@@ -1,0 +1,49 @@
+@import "../../variables";
+@import "../../mixins";
+
+.LinkBtn {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px 18px;
+  gap: 10px;
+  background: transparent;
+  color: $text-color-secondary;
+  @include Text-FS-FW-LH(16px, 400, 150%);
+  border: 1px solid $text-color-primary;
+  border-radius: 53px;
+  z-index: 3;
+
+  &:hover {
+    justify-content: center;
+    align-items: center;
+    background: $bg-five;
+    border: 1px solid $text-color-primary;
+    border-radius: 45px;
+  }
+}
+
+.default {
+  font-family: 'Play', sans-serif;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 253px;
+  height: 64px;
+  background: $bg-five;
+  border-radius: 22px;
+  border: none;
+  @include Text-FS-FW-LH(20px, 700, 23px);
+  font-style: normal;
+  color: $text-color-primary;
+  z-index: 3;
+
+  &:hover {
+    background: $bg-eight;
+    border: 1px solid $text-color-primary;
+    box-shadow: 0 69px 41px rgba(0, 0, 0, 0.26);
+  }
+}

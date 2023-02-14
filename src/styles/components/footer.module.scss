@@ -1,0 +1,119 @@
+@import "../mixins";
+@import "../variables";
+
+.wrapper {
+  display: grid;
+  grid-template-columns: minmax(240px, auto) 140px 140px;
+  column-gap: 15px;
+  grid-template-areas:
+  "contacts services1 services2"
+  ".  date date";
+  color: $text-color-primary;
+  padding: 80px 130px;
+  border-top: 1px solid $text-color-primary;
+
+  .contacts {
+    display: flex;
+    flex-direction: column;
+    grid-area: contacts;
+    @include Text-FS-FW-LH(16px, 400, 19px);
+    gap: 35px;
+
+    a {
+      display: block;
+      @include Text-FS-FW-LH(23px, 400, 27px);
+      text-decoration-line: underline;
+      color: $text-color-primary;
+    }
+
+    .logo {
+      width: 180px;
+    }
+  }
+
+  .services1 {
+    display: grid;
+    align-content: start;
+    row-gap: 12px;
+    max-width: 400px;
+    grid-area: services1;
+
+    a {
+      text-decoration: none;
+      @include Text-FS-FW-LH(20px, 400, 28px);
+      color: $text-color-primary;
+    }
+  }
+
+  .services2 {
+    max-width: 400px;
+    display: grid;
+    align-content: start;
+    row-gap: 12px;
+    grid-area: services2;
+
+    a {
+      text-decoration: none;
+      @include Text-FS-FW-LH(20px, 400, 28px);
+      color: $text-color-primary;
+    }
+  }
+
+  .date {
+    grid-area: date;
+    @include Text-FS-FW-LH(16px, 400, 19px);
+  }
+}
+
+@media (max-width: 790px) {
+  .wrapper {
+    grid-template-columns: auto auto;
+    justify-content: center;
+    grid-template-areas:
+    "contacts  services1"
+    "contacts services2"
+    "date .";
+    row-gap: 15px;
+    padding: 34px 80px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    justify-content: center;
+    padding: 34px 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .wrapper {
+    justify-content: center;
+    padding: 34px 21px;
+
+    .contacts {
+      @include Text-FS-FW-LH(14px, 400, 16px);
+
+      a {
+        @include Text-FS-FW-LH(16px, 400, 19px);
+      }
+    }
+
+    .services1 {
+      a {
+        @include Text-FS-FW-LH(14px, 400, 28px);
+      }
+    }
+
+    .services2 {
+      a {
+        @include Text-FS-FW-LH(14px, 400, 28px);
+      }
+    }
+
+    .date {
+      @include Text-FS-FW-LH(14px, 400, 28px);
+      font-size: 14px;
+      line-height: 28px;
+    }
+  }
+}
