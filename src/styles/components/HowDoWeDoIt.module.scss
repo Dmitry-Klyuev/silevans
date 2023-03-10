@@ -1,0 +1,178 @@
+@import '../mixins';
+@import '../variables';
+
+
+.wrapper {
+  display: flex;
+  gap: 48px;
+  overflow: hidden;
+  padding: 160px 130px 0 0;
+  justify-content: space-between;
+
+  .videoBG {
+    background: url("../../assets/img/BGHowDoIt.png") no-repeat 100% 0;
+    width: 50%;
+    height: 1048px;
+
+
+    .videoWrapper {
+      border-radius: 0 240px 240px 0;
+      position: relative;
+      width: 90%;
+      overflow: hidden;
+      height: inherit;
+
+      .video {
+        padding: 62px 0;
+        position: absolute;
+        left: -350px;
+        border-radius: 0 45% 45% 0% / 10% 100% 100% 0;
+      }
+    }
+
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    width: 45%;
+
+    .title {
+      text-align: right;
+    }
+
+    .items {
+      padding-top: 43px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+
+      .item {
+        display: flex;
+        flex-direction: column;
+        border: double 1px transparent;
+        border-radius: 35px;
+        background-image: radial-gradient(circle at center, #262038, #262038), linear-gradient(to bottom left, transparent 30%, #ffffff, transparent, transparent);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        padding: 18px;
+
+        .itemTitle {
+          @include Text-FS-FW-LH(48px, 400, 56px);
+
+          text-transform: uppercase;
+
+          color: $text-color-secondary;
+        }
+
+        .itemDescription {
+          @include Text-FS-FW-LH(18px, 400, 150%);
+
+          text-transform: uppercase;
+
+          color: $text-color-primary;
+        }
+      }
+    }
+  }
+
+}
+
+@media (max-width: 1439px) {
+  .wrapper {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+
+    .videoBG {
+      background: none;
+      width: 100%;
+      height: auto;
+      order: 2;
+
+      .videoWrapper {
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        justify-content: center;
+
+        .video {
+          border-radius: 20%;
+          position: initial;
+          object-fit: cover;
+          padding: 0;
+          height: auto;
+          max-height: 430px;
+          width: 100%;
+        }
+      }
+
+    }
+
+    .content {
+      width: 100%;
+      align-items: baseline;
+      padding: 0 170px;
+      order: 1;
+
+      .title {
+        text-align: left;
+
+      }
+
+      .items {
+        padding: 20px 20px 0;
+
+      }
+    }
+
+  }
+}
+
+@media (max-width: 965px) {
+  .wrapper {
+    gap: 60px;
+
+    .videoBG {
+      .videoWrapper {
+        width: 100%;
+
+        .video {
+          max-height: 265px;
+        }
+      }
+    }
+
+    .content {
+      padding: 0 20px;
+      align-items: center;
+
+      .title {
+        font-size: 48px;
+        max-width: 215px;
+        margin-right: auto;
+      }
+
+      .items {
+        padding: 30px 0 0;
+        gap: 20px;
+        width: 90%;
+
+        .item {
+          .itemTitle {
+            font-size: 20px;
+            line-height: 23px;
+          }
+
+          .itemDescription {
+            font-size: 14px;
+            line-height: 160%;
+          }
+        }
+      }
+    }
+  }
+}

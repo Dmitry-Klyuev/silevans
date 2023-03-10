@@ -31,4 +31,5 @@ a {
 input, textarea {
     border: none;
     outline: none;
+    font-family: 'Play', sans-serif;
 }

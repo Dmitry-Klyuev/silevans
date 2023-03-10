@@ -1,51 +1,57 @@
 @import "../mixins";
 @import "../variables";
 
-$duration: 15s;
-
-.runningString {
-  width: 100%;
-  height: 104px;;
-  border-top: 1px solid $text-color-primary;
-  border-bottom: 1px solid $text-color-primary;
+$duration: 30s;
+.wrapper {
+  position: relative;
+  height: 104px;
   overflow: hidden;
-  color: $text-color-primary;
-  display: flex;
-  flex-direction: row;
+
+  .runningString {
+    position: absolute;
+    left: 0;
+    width: 5915px;
+    height: 104px;
+    border-top: 1px solid $text-color-primary;
+    border-bottom: 1px solid $text-color-primary;
+    overflow: hidden;
+    color: $text-color-primary;
+    display: flex;
+    flex-direction: row;
 
 
-  .strings {
-    @include Flex-Center();
-    @include Text-FS-FW-LH(40px, 700, 123.7%);
-    font-style: normal;
-    text-transform: uppercase;
-
-
-    .stringItem {
+    .strings {
       @include Flex-Center();
-      width: 770px;
-      height: 49px;
-      animation: ticker $duration infinite linear forwards;
+      @include Text-FS-FW-LH(40px, 700, 123.7%);
+      font-style: normal;
+      text-transform: uppercase;
 
-      .text {
-        padding-right: 27px;
-        padding-left: 27px;
+
+      .stringItem {
+        @include Flex-Center();
+        width: 770px;
+        height: 49px;
+        animation: ticker $duration infinite linear forwards;
+
+        .text {
+          padding-right: 27px;
+          padding-left: 27px;
+        }
+
       }
-
     }
   }
-}
 
-@keyframes ticker {
-  0% {
-    transform: translate(100%, 0);
+  @keyframes ticker {
+    0% {
+      transform: translate(100%, 0);
+    }
+
+    100% {
+      transform: translate(-540%, 0);
+    }
+
+
   }
 
-  50% {
-    transform: translate(0, 0);
-  }
-
-  100% {
-    transform: translate(-100%, 0);
-  }
 }

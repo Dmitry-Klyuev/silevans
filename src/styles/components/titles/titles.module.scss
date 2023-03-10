@@ -2,33 +2,53 @@
 @import '../../mixins';
 
 .mainTitle {
+  position: relative;
+  z-index: 2;
   font-style: normal;
   max-width: 1038px;
   text-transform: uppercase;
   @include Text-FS-FW-LH(128px, 700, 148px);
   letter-spacing: -0.025em;
-  @media (max-width: 1024px) {
+  @media (max-width: 1439px) {
     @include Text-FS-FW-LH(64px, 700, 74px);
     max-width: 554px;
   }
-  @media (max-width: 767px) {
+  @media (max-width: 965px) {
     @include Text-FS-FW-LH(48px, 700, 56px);
     max-width: 370px;
     text-align: center;
-
   }
 }
 
+.mainTitleWide {
+  @extend .mainTitle;
+  @media (max-width: 1098px) {
+    @include Text-FS-FW-LH(64px, 700, 74px);
+    max-width: 554px;
+  }
+  @media (max-width: 965px) {
+    @include Text-FS-FW-LH(48px, 700, 56px);
+    max-width: 370px;
+    text-align: center;
+  }
+  @media (max-width: 370px) {
+    @include Text-FS-FW-LH(44px, 700, 56px);
+    max-width: 360px;
+  }
+
+}
+
 .title {
+  z-index: 1;
   @include Text-FS-FW-LH(110px, 700, 94.7%);
   background: linear-gradient(180deg, $text-color-primary 21.38%, rgba(255, 255, 255, 0) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   max-width: 493px;
-  @media (max-width: 1024px) {
+  @media (max-width: 1439px) {
     @include Text-FS-FW-LH(64px, 700, 94.7%)
   }
-  @media (max-width: 767px) {
+  @media (max-width: 965px) {
     @include Text-FS-FW-LH(48px, 700, 94.7%)
   }
 }

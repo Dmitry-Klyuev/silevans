@@ -1,0 +1,66 @@
+@import "../mixins";
+@import "../variables";
+
+.wrapper {
+  .btnWrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .btn {
+      width: 620px;
+      background: url("../../../src/assets/img/weDoQA_bg.png") no-repeat;
+      border-radius: 35px;
+      padding: 25px 47px;
+      display: flex;
+      justify-content: space-between;
+
+      .title {
+        @include Text-FS-FW-LH(20px, 400, 23px);
+        text-transform: uppercase;
+        color: $text-color-secondary;
+      }
+
+      .more {
+        @include Text-FS-FW-LH(12px, 400, 150%);
+        color: $text-color-secondary;
+        opacity: 0.5;
+        text-decoration-line: underline;
+        cursor: pointer;
+      }
+    }
+
+    .desc {
+      display: none;
+      transition: all ease-in-out 2s;
+    }
+
+    .desc_active {
+      display: block;
+      transition: all ease-in-out 2s;
+      padding: 25px 47px;
+      width: 620px;
+    }
+  }
+}
+
+@media (max-width: 965px) {
+  .wrapper {
+    margin: 0 5px;
+    .btnWrapper {
+      display: grid;
+      grid-template-columns: minmax(330px, 390px);
+
+      .btn {
+        width: 100%;
+        padding: 25px 30px;
+      }
+
+      .desc_active {
+        width: 100%;
+      }
+    }
+  }
+}
+
+

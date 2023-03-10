@@ -1,0 +1,242 @@
+@import "../mixins";
+@import "../variables";
+
+.wrapper {
+
+  position: relative;
+
+  .content {
+    overflow: hidden;
+    padding: 0 130px;
+    @media (max-width: 1439px) {
+      padding: 100px 170px 90px 170px;
+    }
+    @media (max-width: 965px) {
+      padding: 89px 20px 82px 20px;
+    }
+
+    .titleBlock {
+      @media (max-width: 965px) {
+        @include Flex-Center();
+      }
+
+      .taskTitle {
+        max-width: 819px;
+        @media (max-width: 1439px) {
+          max-width: 377px;
+        }
+        @media (max-width: 965px) {
+          text-align: center;
+          max-width: 391px;
+        }
+      }
+    }
+
+
+    .tasks {
+      padding-top: 23px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      @media (max-width: 1439px) {
+        padding-top: 40px;
+        gap: 20px;
+      }
+      @media (max-width: 965px) {
+        padding-top: 20px;
+      }
+
+      .topTask {
+        align-self: center;
+        max-width: 557px;
+        backdrop-filter: blur(34px);
+
+      }
+
+      .leftTask {
+        align-self: start;
+        margin-top: 148px;
+        margin-bottom: -70px;
+        backdrop-filter: none;
+
+      }
+
+      .rightTask {
+        align-self: end;
+        max-width: 570px;
+        backdrop-filter: blur(34px);
+
+      }
+
+      .topTask, .leftTask, .rightTask {
+        z-index: 1;
+        border: 0.1px solid $text-color-primary;
+        border-radius: 35px;
+        text-transform: uppercase;
+        @include Text-FS-FW-LH(20px, 700, 123.7%);
+        padding: 36px 34px;
+        @media (max-width: 1439px) {
+          background: rgba(217, 217, 217, 0.04);
+          backdrop-filter: blur(27px);
+          margin: 0;
+          align-self: center;
+          text-align: center;
+          width: 557px;
+        }
+        @media (max-width: 965px) {
+          @include Text-FS-FW-LH(14px, 700, 123.7%);
+          width: 100%;
+          max-width: 100%;
+          padding: 20px;
+        }
+      }
+
+
+      .tasksDescription {
+        z-index: 1;
+        margin-top: 313px;
+        max-width: 670px;
+        text-align: center;
+        align-self: center;
+        @include Text-FS-FW-LH(18px, 400, 150%);
+        @media (max-width: 1439px) {
+          max-width: 448px;
+          margin-top: 60.65px;
+        }
+        @media (max-width: 965px) {
+          @include Text-FS-FW-LH(14px, 400, 160%);
+          max-width: 448px;
+          margin-top: 90.35px;
+        }
+
+
+      }
+
+      .spaceman {
+        z-index: 0;
+        position: absolute;
+        left: 5%;
+        right: 0;
+        top: -80px;
+        max-width: 100%;
+        @media (max-width: 1439px) {
+          max-width: 731px;
+          top: -180px;
+        }
+        @media (max-width: 965px) {
+          top: -100px;
+          left: 10%;
+          max-width: 452px;
+        }
+        @media (max-width: 550px) {
+          left: -10%;
+        }
+      }
+    }
+
+    .visual {
+      position: relative;
+      padding-top: 95px;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 80px;
+      @media (max-width: 1439px) {
+        padding-top: 90px;
+        padding-bottom: 0;
+      }
+
+      .wavesMob {
+        display: none;
+
+        @media (max-width: 965px) {
+          display: block;
+          position: absolute;
+          left: -20px;
+          top: 70px;
+          width: 120%;
+        }
+      }
+
+
+      .visualTitle {
+        z-index: 1;
+        align-self: center;
+        @include Text-FS-FW-LH(110px, 700, 97.2%);
+        @media (max-width: 1439px) {
+          @include Text-FS-FW-LH(64px, 700, 97.2%);
+        }
+        @media (max-width: 965px) {
+          @include Text-FS-FW-LH(48px, 700, 94.7%);
+          background: linear-gradient(180deg, #FFFFFF 21.38%, rgba(255, 255, 255, 0) 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
+        @media (max-width: 400px) {
+          @include Text-FS-FW-LH(42px, 700, 94.7%);
+        }
+
+      }
+
+      .visualDescription {
+        z-index: 1;
+        align-self: end;
+        padding-top: 210px;
+        max-width: 679px;
+        @media (max-width: 1439px) {
+          padding-top: 100px;
+          align-self: center;
+        }
+        @media (max-width: 965px) {
+          padding-top: 11px;
+          max-width: 100%;
+          text-align: center;
+        }
+
+
+        .visualText {
+          padding-bottom: 30px;
+          @include Text-FS-FW-LH(18px, 400, 150%);
+          @media (max-width: 1439px) {
+            padding-bottom: 40px;
+            max-width: 503px;
+          }
+          @media (max-width: 965px) {
+            @include Text-FS-FW-LH(14px, 400, 160%);
+          }
+        }
+
+        .visualButtonWrapper {
+          @media (max-width: 965px) {
+            display: flex;
+            justify-content: center;
+          }
+
+          .visualButton {
+            z-index: 1;
+          }
+        }
+
+
+      }
+
+      .background {
+        z-index: 0;
+
+        .waves {
+          z-index: 0;
+          position: absolute;
+          bottom: 100px;
+          left: 0;
+          max-width: 100%;
+          @media (max-width: 965px) {
+            display: none;
+          }
+        }
+
+      }
+
+    }
+  }
+
+
+}

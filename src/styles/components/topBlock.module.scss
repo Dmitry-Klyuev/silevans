@@ -2,62 +2,86 @@
 @import '../mixins';
 
 .wrapper {
-  padding: 40px 130px 60px 130px;
-  @media(max-width: 1024px) {
-    padding: 33px 170px 90px 170px;
-  }
-  @media(max-width: 940px) {
-    padding: 33px 50px 90px 170px;
+  position: relative;
+  padding: 60px 130px 60px 130px;
+  @media(max-width: 1439px) {
+    padding: 90px 170px 90px 170px;
   }
 
-  @media(max-width: 767px) {
-    padding: 40px 20px 60px 20px;
+  @media(max-width: 965px) {
+    padding: 155px 20px 60px 20px;
+    min-height: 700px;
   }
 
   .mainTitleBlock {
-    @media(max-width: 767px) {
+    @media(max-width: 965px) {
       @include Flex-Center();
     }
+
   }
 
   .bgImageBlock {
-    @media(max-width: 767px) {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      bottom: 300px;
+    @media(max-width: 965px) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      width: 100%;
     }
 
     .bgImage {
+      z-index: 0;
       position: absolute;
       top: 60px;
       right: 0;
       overflow: hidden;
       width: 45%;
-      @media(max-width: 1024px) {
-        max-width: 40%;
+
+
+      @media(max-width: 1439px) {
+        top: -100px;
+        width: 50%;
       }
-      @media(max-width: 767px) {
-        max-width: 360px;
+      @media(max-width: 965px) {
+        min-width: 360px;
+        width: 100%;
         position: static;
-        opacity: 0.1;
+        opacity: 0.2;
       }
 
+    }
+
+    .questionnaireImage {
+      @extend .bgImage;
+      @media(max-width: 965px) {
+        max-width: 579px;
+        position: static;
+        padding-top: 380px;
+        opacity: 1;
+      }
     }
 
 
   }
 
+  .bgImageBlockQuest {
+    @extend .bgImageBlock;
+    @media(max-width: 965px) {
+      width: 100%;
+      @include Flex-Center();
+    };
+  }
+
   .description {
+    z-index: 1;
     @include Text-FS-FW-LH(16px, 400, 150%);
     max-width: 420px;
     padding-top: 48px;
-    @media(max-width: 1024px) {
+    @media(max-width: 1439px) {
       padding-top: 10px;
       max-width: 333px;
     }
-    @media(max-width: 767px) {
+    @media(max-width: 965px) {
       padding-top: 20px;
       @include Text-FS-FW-LH(14px, 400, 160%);
       text-align: center;
@@ -69,31 +93,40 @@
   }
 
   .costBlock {
+    position: relative;
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 20px;
     margin-top: 48px;
     margin-left: 16%;
-    width: 80%;
+    max-width: 520px;
     border: 0.1px solid $text-color-primary;
-    border-radius: 30px;
-    @media (max-width: 1024px) {
+    border-radius: 35px;
+    background: rgba(217, 217, 217, 0.1);
+    backdrop-filter: blur(25px);
+    @media (max-width: 1439px) {
       width: 100%;
       margin-top: 1px;
       margin-left: 0;
       padding-left: 5px;
     }
-    @media (max-width: 767px) {
+    @media (max-width: 965px) {
+      position: absolute;
+      max-width: 100%;
+      bottom: 0;
+      right: 0;
       flex-direction: column;
       margin: 0;
       padding: 0;
       border: none;
+      background: none;
+      backdrop-filter: none;
+
     }
 
     .button {
-      @media (max-width: 767px) {
-        min-width: 360px;
+      @media (max-width: 965px) {
         @include Text-FS-FW-LH(16px, 700, 19px);
       }
     }
@@ -101,13 +134,50 @@
     .costDescription {
       @include Text-FS-FW-LH(16px, 400, 150%);
       margin-left: 29px;
-      @media (max-width: 767px) {
+      @media (max-width: 965px) {
         margin: 0;
         text-align: center;
         padding-top: 20px;
+        width: 350px;
         @include Text-FS-FW-LH(14px, 400, 150%);
       }
 
+    }
+
+  }
+
+  .costBlockWide {
+    @extend .costBlock;
+    max-width: 700px;
+    @media (max-width: 965px) {
+      max-width: 100%;
+    }
+
+    .costDescription {
+      @media (max-width: 1439px) {
+        margin-left: 6px;
+        @include Text-FS-FW-LH(14px, 400, 150%);
+      }
+    }
+  }
+
+  .giftImage {
+    z-index: 0;
+    position: absolute;
+    bottom: 40px;
+    left: 12%;
+    @media(max-width: 1439px) {
+      display: none;
+    }
+  }
+
+  .coinsImage {
+    z-index: 0;
+    position: absolute;
+    bottom: -35px;
+    left: 1%;
+    @media(max-width: 1439px) {
+      display: none;
     }
   }
 

@@ -1,0 +1,379 @@
+@import "../mixins";
+@import "../variables";
+
+.wrapper {
+  padding: 0 144px;
+  @media(max-width: 1439px) {
+    padding: 0 170px;
+
+  }
+  @media(max-width: 965px) {
+    padding: 90px 20px 0 20px;
+  }
+
+
+  .formBlock {
+
+    .commonInfo, .interest, .projectInfo {
+      padding-bottom: 120px;
+
+      .titles {
+        max-width: 849px;
+        padding-bottom: 57px;
+        @media(max-width: 1439px) {
+          max-width: 480px;
+          padding-bottom: 39px;
+
+        }
+        @media(max-width: 965px) {
+          max-width: 345px;
+          padding-bottom: 30px;
+        }
+      }
+    }
+
+    .commonInfo {
+      .commonInfoForm {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 109px;
+        row-gap: 57px;
+        @media (max-width: 1439px) {
+          justify-content: space-between;
+          column-gap: 20px;
+          row-gap: 20px;
+        }
+        @media (max-width: 965px) {
+          flex-direction: column;
+        }
+
+        .formName, .formEmail, .formPhone, .formCompanyName {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+          position: relative;
+
+          @media (max-width: 1439px) {
+            width: 45%;
+          }
+          @media (max-width: 965px) {
+            width: 100%;
+          }
+
+          .errorInput {
+            border: 2px solid $bg-third;
+          }
+        }
+      }
+    }
+
+    .interest {
+      padding-bottom: 100px;
+      @media (max-width: 1439px) {
+        padding-bottom: 70px;
+      }
+      @media (max-width: 965px) {
+        padding-bottom: 32px;
+      }
+
+
+      .selectorsBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        .container {
+          width: 980px;
+          @media (max-width: 1439px) {
+            width: 100%;
+          }
+
+          .selectorItem {
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 32px 50px;
+            border-radius: 35px;
+            background: rgba(76, 4, 166, 0.27);
+            border: 2px solid transparent;
+            position: relative;
+
+            &:active {
+              border: 2px solid $text-color-primary;
+
+            }
+
+            @media (max-width: 1439px) {
+              padding: 30px 32px;
+            }
+            @media (max-width: 965px) {
+              padding: 25px 30px;
+            }
+
+            .itemTitle {
+              @include Text-FS-FW-LH(48px, 400, 56px);
+              text-transform: uppercase;
+              color: $text-color-third;
+              @media (max-width: 1439px) {
+                @include Text-FS-FW-LH(32px, 400, 37px);
+              }
+              @media (max-width: 965px) {
+                @include Text-FS-FW-LH(20px, 400, 23px);
+              }
+            }
+
+            .itemArrow {
+              transition: all 0.2s ease 0s;
+            }
+
+            .itemArrowExpanded {
+              @extend .itemArrow;
+              transform: rotate(180deg);
+            }
+          }
+
+          .selectorItemActive {
+            @extend .selectorItem;
+            border: 2px solid $text-color-primary;
+          }
+
+          .selectorItemHidden {
+            z-index: 0;
+            position: relative;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 0;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 0 40% 0 54px;
+            border: 1px solid transparent;
+            border-top: none;
+            transition: all 0.2s ease 0s;
+            @media (max-width: 1439px) {
+              padding: 0 32px 0 32px;
+            }
+            @media (max-width: 965px) {
+              margin-bottom: 8px;
+              padding: 0 30px 0 30px;
+            }
+
+          }
+
+          .selectorItemExpanded {
+            @extend .selectorItemHidden;
+            z-index: 1;
+            background: rgba(216, 216, 216, 0.13);
+            backdrop-filter: blur(34px);
+            border-radius: 35px;
+            padding: 140px 40% 42px 54px;
+            height: 100%;
+            top: -120px;
+            margin-bottom: -100px;
+            border: 1px solid $text-color-primary;
+            border-top: none;
+            transition: all 0.2s ease 0s;
+            @media (max-width: 1439px) {
+              top: -100px;
+              margin-bottom: -80px;
+              padding: 120px 32px 30px 32px;
+            }
+            @media (max-width: 965px) {
+              top: -80px;
+              margin-bottom: -72px;
+              padding: 100px 30px 25px 30px;
+            }
+
+          }
+        }
+
+
+      }
+
+    }
+
+    .projectInfo {
+      .projectInputForm {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        row-gap: 57px;
+        @media(max-width: 1439px) {
+          row-gap: 20px;
+          align-items: flex-start;
+        }
+
+        .formMessage {
+          position: relative;
+        }
+
+      }
+
+      .row2 {
+        @media(max-width: 1439px) {
+          width: 100%;
+        }
+
+        .formMessage {
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+
+          textarea {
+            min-width: 854px;
+            min-height: 265px;
+
+            @media(max-width: 1439px) {
+              min-width: 100%;
+              min-height: 300px;
+            }
+            @media(max-width: 965px) {
+              min-height: 240px;
+            }
+          }
+        }
+      }
+
+      .buttonBlock {
+        width: 854px;
+        display: flex;
+        flex-direction: column;
+        @media(max-width: 1439px) {
+          width: 100%;
+          margin-top: 20px;
+        }
+        @media(max-width: 965px) {
+          width: 100%;
+          margin-top: 40px;
+        }
+
+        .button {
+          align-self: flex-end;
+          @media(max-width: 1439px) {
+            align-self: center;
+          }
+        }
+      }
+    }
+
+    .formikError {
+      color: $bg-third;
+      font-size: 16px;
+      @include Flex-Center();
+    }
+  }
+
+
+  .fakePlaceholder {
+    position: absolute;
+    left: 0;
+    display: none;
+    @include Text-FS-FW-LH(16px, 400, 123.7%);
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.4;
+    padding: 22px;
+    pointer-events: none;
+    @media (max-width: 1439px) {
+      display: block;
+    }
+    @media (max-width: 965px) {
+      padding: 27px;
+    }
+  }
+
+  input[type=text], input[type=tel], input[type=email], textarea {
+    border: 2px solid transparent;
+    padding: 35px;
+    border-radius: 49px;
+    background: $bg-seven;
+    color: $text-color-primary;
+    @include Text-FS-FW-LH(20px, 400, 123.7%);
+    @media (max-width: 1439px) {
+      @include Text-FS-FW-LH(16px, 400, 123.7%);
+      padding: 20px;
+    }
+    @media (max-width: 965px) {
+      padding: 25px;
+    }
+
+    &:focus {
+      border: 2px solid #FFFFFF;
+    }
+
+    &::placeholder {
+      color: rgba(255, 255, 255, 0.8);
+      opacity: 0.4;
+      @media (max-width: 1439px) {
+        color: transparent;
+      }
+    }
+
+    &:focus ~ .fakePlaceholder {
+      display: none;
+    }
+
+    &:disabled {
+      opacity: 0.4;
+      cursor: no-drop;
+    }
+  }
+
+  input[type=text], input[type=tel], input[type=email] {
+    width: 380px;
+    @media (max-width: 1439px) {
+      width: 100%;
+    }
+  }
+
+  .label {
+    padding-left: 35px;
+    @include Text-FS-FW-LH(20px, 700, 123.7%);
+    text-transform: uppercase;
+    @media (max-width: 1439px) {
+      display: none;
+    }
+  }
+
+  :focus::-webkit-input-placeholder {
+    color: transparent;
+  }
+
+  :focus::-moz-placeholder {
+    color: transparent;
+  }
+
+  :focus:-moz-placeholder {
+    color: transparent;
+  }
+
+  :focus:-ms-input-placeholder {
+    color: transparent;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover,
+  input:-webkit-autofill:focus,
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  textarea:-webkit-autofill:hover,
+  textarea:-webkit-autofill:focus,
+  select:-webkit-autofill,
+  select:-webkit-autofill:hover,
+  select:-webkit-autofill:focus {
+    border: 0;
+    -webkit-text-fill-color: $text-color-primary;
+    -webkit-box-shadow: 0 0 0 1000px $bg-seven inset;
+    transition: background-color 5000s ease-in-out 0s;
+    background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(0, 174, 255, 0.04) 50%, rgba(255, 255, 255, 0) 51%, rgba(0, 174, 255, 0.03) 100%);
+  }
+
+}
+
+

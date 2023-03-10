@@ -1,0 +1,277 @@
+@import '../variables';
+@import '../mixins';
+
+.wrapper {
+  padding: 0 130px 100px 130px;
+  @media (max-width: 1439px) {
+    padding: 0 175px 40px 170px;
+  }
+  @media (max-width: 965px) {
+    padding: 0 18px 60px 20px;
+  }
+  position: relative;
+  overflow: hidden;
+
+  .gifBlock {
+    z-index: 0;
+    position: absolute;
+    top: 50px;
+    right: 250px;
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    @media (max-width: 1439px) {
+      width: 500px;
+      height: 500px;
+      top: 190px;
+      right: 300px;
+    }
+    @media (max-width: 1439px) {
+      top: -20px;
+      right: 100px;
+    }
+    @media (max-width: 965px) {
+      top: 40px;
+      right: -80px;
+    }
+
+    .questionVideo {
+      z-index: 0;
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      width: 450px;
+      height: 450px;
+      @media (max-width: 1439px) {
+        width: 400px;
+        height: 400px;
+      }
+      @media (max-width: 965px) {
+        top: 20px;
+        right: 90px;
+        width: 250px;
+        height: 250px;
+      }
+    }
+
+    .questMark {
+      z-index: 0;
+      font-size: 650px;
+      font-weight: bold;
+      color: $text-color-primary;
+      background: $bg-primary;
+      mix-blend-mode: darken;
+      width: 500px;
+      height: 500px;
+      line-height: 71%;
+      text-align: center;
+
+      @media (max-width: 1439px) {
+        font-size: 450px;
+      }
+      @media (max-width: 965px) {
+        font-size: 300px;
+        line-height: 100%;
+      }
+    }
+
+  }
+
+  .content {
+    display: flex;
+    padding-top: 64px;
+    padding-left: 100px;
+    position: relative;
+    @media (max-width: 1439px) {
+      flex-direction: column;
+      padding-left: 0;
+      padding-top: 20px;
+    }
+
+
+    .topPart {
+      width: 40%;
+      @media (max-width: 1439px) {
+        width: 100%;
+      }
+
+      .topText {
+        @include Text-FS-FW-LH(18px, 400, 150%);
+        max-width: 440px;
+        @media (max-width: 965px) {
+          max-width: 80%;
+          @include Text-FS-FW-LH(14px, 400, 160%);
+        }
+
+
+      }
+
+      .girlImg {
+        position: relative;
+        left: -180px;
+        @media (max-width: 1439px) {
+          position: absolute;
+        }
+        @media (max-width: 965px) {
+          left: -100px;
+          bottom: 140px;
+        }
+
+        img {
+          @media (max-width: 965px) {
+            max-width: 292px;
+          }
+        }
+
+
+      }
+    }
+
+    .nextPart {
+      width: 60%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 247px;
+      position: relative;
+      @media (max-width: 1439px) {
+        margin-top: 109px;
+        width: 100%;
+        align-items: end;
+      }
+      @media (max-width: 965px) {
+        margin-top: 110px;
+      }
+
+      .textBlock {
+        display: flex;
+        flex-direction: column;
+        row-gap: 2px;
+        @media (max-width: 1439px) {
+          align-items: end;
+          row-gap: 20px;
+        }
+
+        .first, .second, .third {
+          @include Text-FS-FW-LH(18px, 400, 150%);
+          max-width: 75%;
+          @media (max-width: 1439px) {
+            max-width: 375px;
+          }
+          @media (max-width: 965px) {
+            max-width: 246px;
+            @include Text-FS-FW-LH(14px, 400, 160%);
+          }
+        }
+
+        .first {
+          @media(max-width: 965px) {
+            position: absolute;
+            left: 0;
+            top: 0;
+          }
+
+        }
+
+        .second {
+          @media(max-width: 965px) {
+            padding-top: 95px;
+          }
+          @media(max-width: 440px) {
+            max-width: 180px;
+          }
+
+        }
+
+        .third {
+          @media(max-width: 440px) {
+            max-width: 180px;
+
+          }
+
+        }
+      }
+
+      .buttonBlock {
+        display: flex;
+        position: relative;
+        flex-direction: row;
+        align-items: center;
+        padding: 20px;
+        margin-top: 36px;
+        max-width: 580px;
+        border-radius: 35px;
+        border: solid 1px transparent;
+        background-image: radial-gradient(circle at center, #262038, #262038), linear-gradient(to bottom left, transparent 25%, #ffffff, transparent, transparent);
+        background-origin: border-box;
+        background-clip: padding-box, border-box;
+        @media (max-width: 1439px) {
+          width: 469px;
+          padding: 9px;
+          flex-direction: row-reverse;
+        }
+        @media (max-width: 965px) {
+          max-width: 100%;
+          width: 100%;
+          flex-direction: column-reverse;
+          margin: 0;
+          padding: 98px 0 0 0;
+          border: none;
+          background: none;
+          backdrop-filter: none;
+
+        }
+
+        .button {
+          @media (max-width: 1439px) {
+            min-width: 220px;
+            @include Text-FS-FW-LH(16px, 700, 19px);
+          }
+          @media (max-width: 965px) {
+            min-width: 350px;
+          }
+        }
+
+        .buttonDescription {
+          width: 50%;
+          @include Text-FS-FW-LH(16px, 400, 150%);
+          @media (max-width: 1439px) {
+            padding-left: 20px;
+          }
+          @media (max-width: 965px) {
+            width: 270px;
+            margin: 0;
+            text-align: center;
+            padding-top: 20px;
+            @include Text-FS-FW-LH(14px, 400, 150%);
+          }
+
+        }
+      }
+    }
+  }
+
+  .title {
+    position: relative;
+    z-index: 1;
+    @include Text-FS-FW-LH(110px, 700, 97.2%);
+    max-width: 900px;
+    @media (max-width: 1439px) {
+      @include Text-FS-FW-LH(64px, 700, 94.7%);
+      max-width: 468px;
+    }
+    @media (max-width: 965px) {
+      @include Text-FS-FW-LH(48px, 700, 94.7%);
+      max-width: 360px;
+    }
+    @media (max-width: 390px) {
+      @include Text-FS-FW-LH(44px, 700, 94.7%);
+    }
+  }
+
+}
+

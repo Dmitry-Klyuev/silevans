@@ -3,15 +3,108 @@
 
 
 .wrapper {
-  display: flex;
+  @include Flex-Center();
+  flex-wrap: wrap;
   column-gap: 51px;
   padding-left: 42px;
-  align-items: center;
 
-  :global {
-    .swiper-slide {
-      width: 380px;
+  > h2 {
+    flex-basis: 20%;
+    flex-grow: 1;
+  }
+
+  .card {
+    > h5 {
+      display: none;
+    }
+
+    > button {
+      display: none;
     }
   }
 
+  :global {
+    .swiper {
+      flex-basis: 60%;
+      flex-grow: 1;
+
+      .swiper-slide {
+        max-width: 380px;
+        width: 100%;
+      }
+    }
+  }
+
+  > button {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 1439px) {
+  .wrapper {
+    padding-left: 170px;
+    column-gap: 0;
+
+    > h2 {
+      max-width: 270px;
+    }
+
+    > button {
+      margin: 40px 15% 0 0;
+    }
+  }
+}
+
+@media (max-width: 965px) {
+  .wrapper {
+    padding: 0 10px;
+
+    > h2 {
+      flex-basis: 100%;
+      flex-grow: 1;
+      max-width: 90%;
+    }
+
+    .card {
+      margin-top: 30px;
+      border-radius: 50px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-direction: column;
+      border: double 1px transparent;
+      background-image: radial-gradient(circle at center, #262038, #262038), linear-gradient(to bottom left, transparent 30%, #ffffff, transparent, transparent);
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+      padding: 8px 15px 37px;
+
+      > img {
+        width: 100%;
+        border-radius: 41px;
+      }
+
+      > h5 {
+        display: block;
+        @include Text-FS-FW-LH(20px, 700, 123.7%);
+        color: $text-color-primary;
+      }
+
+      > button {
+        display: block;
+      }
+    }
+
+    > button {
+      flex-basis: 100%;
+      max-width: 391px;
+      margin: 60px auto 0;
+
+      > a {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }

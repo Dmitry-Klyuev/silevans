@@ -20,6 +20,7 @@
     background: $bg-five;
     border: 1px solid $text-color-primary;
     border-radius: 45px;
+    cursor: pointer;
   }
 }
 
@@ -36,6 +37,7 @@
   background: $bg-five;
   border-radius: 22px;
   border: none;
+  white-space: nowrap;
   @include Text-FS-FW-LH(20px, 700, 23px);
   font-style: normal;
   color: $text-color-primary;
@@ -45,5 +47,10 @@
     background: $bg-eight;
     border: 1px solid $text-color-primary;
     box-shadow: 0 69px 41px rgba(0, 0, 0, 0.26);
+    cursor: pointer;
+  }
+
+  @media (max-width: 965px) {
+    min-width: 320px;
   }
 }

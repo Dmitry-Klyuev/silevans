@@ -2,50 +2,24 @@
 @import "../variables";
 
 .wrapper {
-  padding: 232px 0 0 60px;
-  @media (max-width: 1010px) {
-    padding: 30px 20px;
-
-  }
+  padding: 96px 0 158px 60px;
 
   .stars {
-    background: url("../../assets/img/stars.png");
-    width: 100%;
-    max-width: 1338px;
+    background: url("../../assets/img/stars.webp") center;
+    background-size: cover;
     height: 557px;
     display: flex;
     padding: 0 130px;
     justify-content: space-between;
-    @media (max-width: 1170px) {
-      padding: 0 173px;
-      background: url("../../assets/svg/starForTablet.svg");
-
-    }
-    @media (max-width: 1010px) {
-      background: url("../../assets/svg/starForMobile.svg");
-      flex-direction: column;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      padding: 0;
-      min-height: 760px;
-    }
 
     .pulse {
-      position: relative;
-      left: 169px;
-      @media (max-width: 1170px) {
-        left: 110px;
-      }
-      @media (max-width: 1010px) {
-        position: static;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 476px;
 
       .pulse_item {
-        position: absolute;
-        top: 25%;
-        left: 40%;
-        transform: translate(-505, -50%);
+        position: relative;
         width: 236px;
         height: 236px;
         background: $bg-five;
@@ -58,25 +32,7 @@
         text-transform: uppercase;
 
         color: #FFFFFF;
-        @media (max-width: 1170px) {
-          @include Text-FS-FW-LH(64px, 700, 74px);
-          width: 118px;
-          height: 118px;
-          border: 6px solid $bg-pulse-border;
-          box-shadow: 0 0 0 18px $bg-pulse-border;
-        }
-        @media (max-width: 1010px) {
-          @include Text-FS-FW-LH(105px, 700, 121px);
-          width: 180px;
-          height: 180px;
-          border: 12px solid $bg-pulse-border;
-          box-shadow: 0 0 0 36px $bg-pulse-border;
-          position: relative;
-          top: 200px;
-          left: 0;
-          bottom: 0;
-          right: 0;
-        }
+
 
         &:before, &:after {
           content: '';
@@ -88,18 +44,8 @@
           border: 2px solid $bg-pulse-border;
           border-radius: 50%;
           animation: animate 3.5s ease-in-out infinite;
-          @media (max-width: 1170px) {
-            left: -15px;
-            top: -15px;
-            right: -15px;
-            bottom: -15px;
-          }
-          @media (max-width: 1010px) {
-            left: -30px;
-            top: -30px;
-            right: -30px;
-            bottom: -30px;
-          }
+
+
         }
 
         &:after {
@@ -124,28 +70,14 @@
       display: flex;
       flex-direction: column;
       align-items: flex-end;
-      max-width: 400px;
-      @media (max-width: 1010px) {
-        align-items: center;
-      }
+      max-width: 50%;
+
 
       .titleBlock {
         @include Text-FS-FW-LH(48px, 400, 56px);
         text-align: right;
         text-transform: uppercase;
         color: $text-color-primary;
-        @media (max-width: 1170px) {
-          @include Text-FS-FW-LH(32px, 400, 37px);
-        }
-        @media (max-width: 1010px) {
-          @include Text-FS-FW-LH(48px, 700, 97.2%);
-          @include H5-Title-For-Mobile();
-          position: absolute;
-          text-align: left;
-          max-width: 302px;
-          top: 0;
-          left: 0;
-        }
       }
 
       .title {
@@ -154,32 +86,192 @@
         text-transform: uppercase;
         margin-top: 72px;
         color: $text-color-primary;
-        @media (max-width: 1170px) {
-          @include Text-FS-FW-LH(48px, 400, 56px);
-        }
-        @media (max-width: 1010px) {
-          @include Text-FS-FW-LH(32px, 400, 37px);
-          text-align: center;
-          padding-bottom: 20px;
-
-        }
       }
 
       .description {
         @include Text-FS-FW-LH(16px, 400, 150%);
+        margin-top: 8px;
         max-width: 330px;
         text-align: right;
         color: $text-color-primary;
-        @media (max-width: 1010px) {
+      }
+    }
+
+    .dots {
+      display: flex;
+      gap: 20px;
+      margin-top: 30px;
+
+      .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #4C04A6;
+      }
+    }
+
+
+    .btn {
+      margin-top: 40px;
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .wrapper {
+    padding: 80px 20px;
+
+    .stars {
+      padding: 0 173px;
+      height: 350px;
+      background: url("../../assets/svg/starForTablet.svg");
+
+      .pulse {
+        width: 240px;
+
+        .pulse_item {
+          @include Text-FS-FW-LH(64px, 700, 74px);
+          width: 118px;
+          height: 118px;
+          border: 6px solid $bg-pulse-border;
+          box-shadow: 0 0 0 18px $bg-pulse-border;
+        }
+
+        &:before, &:after {
+          left: -15px;
+          top: -15px;
+          right: -15px;
+          bottom: -15px;
+        }
+
+        &:after {
+
+        }
+      }
+
+      .content {
+        max-width: 55%;
+
+        .titleBlock {
+          @include Text-FS-FW-LH(32px, 400, 37px);
+        }
+
+        .title {
+          @include Text-FS-FW-LH(48px, 400, 56px);
+          margin-top: 10px;
+        }
+
+        .description {
+
+
+        }
+      }
+
+      .dots {
+        margin-top: 10px;
+
+        .dot {
+          width: 10px;
+          height: 10px;
+        }
+      }
+
+
+      .btn {
+        margin-top: 20px;
+      }
+
+    }
+  }
+
+
+}
+
+@media (max-width: 965px) {
+  .wrapper {
+    padding: 60px 20px 70px;
+
+    .stars {
+      background: url("../../assets/svg/starForMobile.svg");
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 0;
+      min-height: 840px;
+
+      .pulse {
+        position: relative;
+        top: 230px;
+
+        .pulse_item {
+
+          @include Text-FS-FW-LH(105px, 700, 121px);
+          width: 180px;
+          height: 180px;
+          border: 12px solid $bg-pulse-border;
+          box-shadow: 0 0 0 36px $bg-pulse-border;
+        }
+
+        &:before, &:after {
+
+          left: -30px;
+          top: -30px;
+          right: -30px;
+          bottom: -30px;
+        }
+
+        &:after {
+
+        }
+      }
+
+      .content {
+        max-width: 100%;
+        align-items: center;
+
+        .titleBlock {
+          @include Text-FS-FW-LH(48px, 700, 97.2%);
+          @include H5-Title-For-Mobile();
+          position: absolute;
+          text-align: left;
+          max-width: 302px;
+          top: 0;
+          left: 0;
+
+        }
+
+        .title {
+          @include Text-FS-FW-LH(32px, 400, 37px);
+          margin-top: 280px;
+          text-align: center;
+          width: 100%;
+          padding-bottom: 20px;
+        }
+
+        .description {
+
           @include Text-FS-FW-LH(14px, 400, 160%);
           text-align: center;
+        }
+
+        .dots {
+
+
+          .dot {
+
+          }
+        }
+
+
+        .btn {
+          margin-top: 60px;
         }
       }
     }
 
-    .btn {
-      margin-top: 88px;
-    }
+
   }
 }
+
 

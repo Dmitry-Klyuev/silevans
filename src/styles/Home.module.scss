@@ -1,7 +1,28 @@
 @import "variables";
 
+.wrap {
+  padding: 50px 210px;
+  color: $text-color-primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .main {
   background: $bg-primary;
   height: 100%;
   color: $text-color-primary;
+
+  .OurWorks {
+    padding-left: 130px;
+    @media(max-width: 1439px) {
+      padding-left: 175px;
+    }
+    @media(max-width: 965px) {
+      padding: 40px 20px 0;
+      > h2 {
+        margin-right: auto;
+      }
+    }
+  }
 }

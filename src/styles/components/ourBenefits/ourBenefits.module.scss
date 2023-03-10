@@ -1,0 +1,147 @@
+@import '../../variables';
+@import '../../mixins';
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+
+  .title {
+    max-width: max-content;
+  }
+
+  .items {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+
+    .item {
+      display: flex;
+      align-items: center;
+      width: 282px;
+      height: 193px;
+      border: double 1px transparent;
+      border-radius: 38px;
+
+      background-image: radial-gradient(circle at center, rgba(40, 63, 191, 0.5), #000038 40%),
+      linear-gradient(to bottom right, transparent 30%, #ffffff, transparent, transparent);
+
+      background-origin: border-box;
+      background-clip: padding-box, border-box;
+
+      &:nth-child(even) {
+        margin-top: 46px;
+      }
+
+      .description {
+        @include Text-FS-FW-LH(20px, 700, 123.7%);
+        text-align: center;
+        text-transform: uppercase;
+        color: $text-color-primary;
+      }
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .wrapper {
+    gap: normal;
+
+    .title {
+      font-size: 64px;
+      line-height: 94.7%;
+    }
+
+    .items {
+      gap: normal;
+      height: 250px;
+      align-items: center;
+
+      .item {
+        width: 223px;
+        height: 103px;
+
+
+        &:nth-child(1) {
+          transform: rotate(-32.44deg);
+        }
+
+        &:nth-child(2) {
+          transform: rotate(19.15deg);
+        }
+
+        &:nth-child(3) {
+          transform: rotate(47.55deg);
+        }
+
+        &:nth-child(4) {
+          transform: rotate(23.44deg);
+        }
+
+        &:nth-child(even) {
+          margin: 0;
+        }
+
+        .description {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 965px) {
+  .wrapper {
+    gap: 40px;
+
+    .title {
+      font-size: 48px;
+      max-width: 391px;
+      text-align: center;
+      height: max-content;
+    }
+
+    .items {
+      width: 100%;
+      flex-direction: column;
+      height: 460px;
+      gap: 10px;
+      align-items: center;
+
+
+      .item {
+        &:nth-child(1) {
+          transform: rotate(-3.89deg);
+          margin-left: -15.3%;
+        }
+
+        &:nth-child(2) {
+          transform: rotate(3.43deg);
+          margin-left: 15.3%;
+        }
+
+        &:nth-child(3) {
+          transform: rotate(-6.35deg);
+          margin-left: -14.3%;
+        }
+
+        &:nth-child(4) {
+          transform: rotate(6.21deg);
+          margin-left: 14.3%;
+        }
+
+        &:nth-child(even) {
+          margin-top: 0;
+        }
+
+        .description {
+          font-size: 14px;
+          line-height: 160%;
+          padding: 10px;
+        }
+      }
+    }
+  }
+}
+

@@ -3,85 +3,99 @@
 
 .wrapper {
   padding: 60px 124px 80px 143px;
-  @media(max-width: 1024px) {
-    padding: 30px 170px;
-  }
-  @media(max-width: 767px) {
-    padding: 30px 43px 40px 37px;
-  }
 
   .blockComfort {
     margin: 0 auto;
     height: 290px;
-    max-width: 1173px;
     display: flex;
     justify-content: space-between;
-    position: relative;
-    @media(max-width: 1024px) {
-      height: 173px;
-    }
-    @media(max-width: 767px) {
-      max-height: 116px;
-    }
 
     .rocketsImg {
-      background: url("../../assets/img/Rockets.png") no-repeat 40px 60px;
+      background: url("../../assets/img/Rockets.webp") no-repeat 15px 40px;
       width: 50%;
       background-size: 100% auto;
-      position: relative;
-      @media(max-width: 1024px) {
-        width: 40%;
-        background-position: 100% 100%;
-      }
-      @media(max-width: 767px) {
-        display: none;
-      }
 
       .comfort_title {
         @include Text-FS-FW-LH(64px, 700, 97.2%);
         color: $text-color-primary;
-        position: absolute;
-        top: 0;
-        left: 0;
-        @media(max-width: 1024px) {
-          @include Text-FS-FW-LH(32px, 700, 97.2%);
-        }
       }
     }
 
     .circleImg {
-      background: url("../../assets/img/circle.png") no-repeat 100% 50px;
+      background: url("../../assets/img/circle.webp") no-repeat 100% 50px;
       width: 50%;
-      position: relative;
-      display: flex;
       background-size: 40% auto;
-      @media(max-width: 1024px) {
-        width: 55%;
-        background-size: 20% auto;
-        background-position: 90% 90%;
-      }
-      @media(max-width: 767px) {
-        background: none;
-        width: 100%;
-      }
-
 
       .comfort_description {
         @include Text-FS-FW-LH(16px, 400, 150%);
         padding: 20px 0 0;
         color: $text-color-primary;
-        width: 65%;
-        height: auto;
-        top: 0;
-        left: 0;
-        position: absolute;
-        @media(max-width: 1024px) {
-          width: 80%;
+        width: 67%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1439px) {
+  .wrapper {
+    padding: 30px 170px;
+
+    .blockComfort {
+      height: 173px;
+
+      .rocketsImg {
+        background-size: contain;
+
+        .comfort_title {
+          @include Text-FS-FW-LH(32px, 700, 97.2%);
         }
-        @media(max-width: 767px) {
+      }
+
+      .circleImg {
+        width: 55%;
+        background-size: 95px auto;
+        background-position: 100% 100%;
+
+
+        .comfort_description {
+          padding-top: 9px;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 965px) {
+  .wrapper {
+
+    padding: 30px 43px 40px 37px;
+
+
+    .blockComfort {
+
+      max-height: 116px;
+
+
+      .rocketsImg {
+
+        display: none;
+
+
+        .comfort_title {
+
+        }
+      }
+
+      .circleImg {
+        background: none;
+        width: 100%;
+
+        .comfort_description {
           padding: 0;
           width: 100%;
           text-align: center;
+
         }
       }
     }

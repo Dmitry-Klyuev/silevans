@@ -3,86 +3,117 @@
 
 .wrapper {
   width: 100%;
-  padding-bottom: 60px;
-  @media (max-width: 1024px) {
-    padding-bottom: 90px;
-  }
-  @media (max-width: 767px) {
-    padding-bottom: 128px;
+  padding: 46px 130px 0 130px;
+  @media(max-width: 1439px) {
+    padding: 33px 170px 0 170px;
   }
 
-}
+  @media(max-width: 965px) {
+    padding: 44px 20px 0 20px;
+  }
+  @media(max-width: 400px) {
+    padding: 44px 3px 0 3px;
+  }
 
-.header {
-  color: $text-color-primary;
-  display: flex;
-  flex-direction: column;
 
-  .row {
+  .header {
+    color: $text-color-primary;
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
 
-
-    .logoBlock {
-      left: 0;
-      right: 84.75%;
-      top: 0.1%;
-      bottom: 0.1%;
-      @media (max-width: 1220px) {
-        display: none;
-      }
-    }
-
-    .navBlock {
+    .row {
       display: flex;
       flex-direction: row;
-      justify-content: end;
+      justify-content: space-between;
       align-items: center;
-      width: 100%;
-      @media (max-width: 1220px) {
-        justify-content: space-between;
-      }
 
-      .navLinks {
-        display: flex;
 
-        a {
-          left: 68.22%;
-          right: 27.63%;
-          top: 19.35%;
-          bottom: 19.35%;
-          @include Text-FS-FW-LH(16px, 400, 19px);
-          font-style: normal;
-          padding-right: 30px;
-          color: #FFFFFF;
-          opacity: 0.4;
+      .logoBlock {
+        left: 0;
+        right: 84.75%;
+        top: 0.1%;
+        bottom: 0.1%;
 
+        &:hover {
+          cursor: pointer;
+        }
+
+        @media (max-width: 965px) {
+          display: none;
         }
       }
 
+      .navBlock {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        width: 100%;
+        @media (max-width: 965px) {
+          justify-content: space-between;
+        }
 
-      .buttonCallback {
-        font-family: 'Play', sans-serif;
+        .navLinks {
+          display: flex;
+          z-index: 4;
+
+          &:hover {
+            cursor: pointer;
+          }
+
+          .servicesLink, .portfolioLink {
+            @include Text-FS-FW-LH(16px, 400, 19px);
+            z-index: 2;
+            font-style: normal;
+            padding-right: 30px;
+            opacity: 0.4;
+
+            &:hover {
+              opacity: 1;
+            }
+
+          }
+        }
+
+
+        .buttonCallback {
+          font-family: 'Play', sans-serif;
+          padding: 3px 18px;
+        }
+
+      }
+    }
+
+    .currentPage {
+      font-style: normal;
+      @include Text-FS-FW-LH(16px, 400, 19px);
+      padding-top: 15px;
+      @media (max-width: 1220px) {
+        display: none;
+      }
+
+      .mainPageLink {
+        opacity: 0.4;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      .currentPageName {
+        opacity: 0.4;
+
       }
 
     }
   }
 
-  .currentPage {
-
-    left: 9.03%;
-    right: 86.67%;
-    top: 1.27%;
-    bottom: 98.46%;
-    font-style: normal;
-    @include Text-FS-FW-LH(16px, 400, 19px);
-    color: #FFFFFF;
-    opacity: 0.4;
-    padding-top: 20px;
-    @media (max-width: 1220px) {
-      display: none;
+  .headerMainPage {
+    @extend .header;
+    width: 55%;
+    @media(max-width: 1439px) {
+      width: 100%;
     }
 
   }

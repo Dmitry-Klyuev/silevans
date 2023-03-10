@@ -1,0 +1,312 @@
+@import '../mixins';
+@import '../variables';
+
+.wrapper {
+  padding: 0 134px 0 130px;
+  color: $text-color-primary;
+  @media(max-width: 1439px) {
+    padding: 90px 170px 0 172px;
+  }
+  @media(max-width: 965px) {
+    padding: 100px 20px 0 20px;
+  }
+
+  .videoBlockForMobile {
+    display: none;
+    @media (max-width: 965px) {
+      position: relative;
+      display: block;
+      padding-bottom: 100px;
+    }
+
+    .videoForMobile {
+      width: 100%;
+    }
+  }
+
+  .toolsInfoBlock {
+    width: 827px;
+    display: flex;
+    flex-direction: column;
+    @media(max-width: 1439px) {
+      width: 100%;
+    }
+
+
+    .titleRow {
+      z-index: 1;
+      @include Text-FS-FW-LH(64px, 700, 97.2%);
+      padding-bottom: 16px;
+      max-width: 700px;
+      @media(max-width: 1439px) {
+        @include Text-FS-FW-LH(32px, 700, 97.2%);
+        width: 339px;
+      }
+      @media(max-width: 965px) {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        @include H5-Title-For-Mobile();
+        @include Text-FS-FW-LH(48px, 700, 94.7%);
+      }
+
+      span {
+        @media(max-width: 965px) {
+          display: none;
+        }
+      }
+    }
+
+    .videoAndTextRow {
+      display: flex;
+      z-index: 1;
+
+      .videoBlock {
+        @include Flex-Center();
+        width: 418px;
+        height: 116px;
+        overflow: hidden;
+        margin-right: 29px;
+        border-radius: 35px;
+        @media(max-width: 1439px) {
+          width: 220px;
+          height: 61.05px;
+        }
+        @media(max-width: 965px) {
+          display: none;
+        }
+      }
+
+      .text {
+        @include Text-FS-FW-LH(16px, 400, 150%);
+        width: 380px;
+        position: relative;
+        bottom: 48px;
+        @media(max-width: 1439px) {
+          bottom: 32px;
+          max-width: 380px;
+        }
+        @media(max-width: 965px) {
+          width: 100%;
+          position: static;
+          @include Text-FS-FW-LH(14px, 400, 160%);
+        }
+      }
+    }
+  }
+
+  .technologyBlock {
+    min-height: 1050px;
+    position: relative;
+    padding: 137px 76px 0 76px;
+    @media (max-width: 1439px) {
+      padding: 30px 0 0 0;
+    }
+
+    .gears {
+      position: relative;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+
+      .purple {
+        position: absolute;
+        right: -150px;
+        top: -250px;
+        @media (max-width: 1439px) {
+          width: 271px;
+          right: -100px;
+          top: -100px;
+        }
+        @media (max-width: 965px) {
+          width: 143px;
+          right: 80px;
+          top: 10px;
+        }
+      }
+
+      .pink {
+        position: absolute;
+        top: 120px;
+        right: 230px;
+        @media (max-width: 1439px) {
+          width: 143px;
+          right: -20px;
+          top: 480px;
+        }
+        @media (max-width: 965px) {
+          width: 105px;
+          right: 10px;
+          top: 130px;
+        }
+      }
+
+      .blue {
+        position: absolute;
+        right: 350px;
+        top: 0;
+        @media (max-width: 1439px) {
+          width: 222px;
+          right: 100px;
+          top: 0;
+        }
+        @media (max-width: 965px) {
+          width: 185px;
+          right: 10px;
+          top: 640px;
+          z-index: 2;
+        }
+      }
+
+      .blueBig {
+        position: absolute;
+        top: 160px;
+        left: -200px;
+        @media (max-width: 1439px) {
+          width: 359px;
+        }
+        @media (max-width: 965px) {
+          width: 163px;
+          top: 180px;
+          left: 80px;
+        }
+      }
+
+      .green {
+        position: absolute;
+        top: 170px;
+        left: 150px;
+        @media (max-width: 1439px) {
+          width: 281px;
+          top: 500px;
+          left: 270px;
+        }
+        @media (max-width: 965px) {
+          width: 147px;
+          top: 210px;
+          left: -60px;
+        }
+      }
+
+      .greenBig {
+        position: absolute;
+        top: 375px;
+        left: 200px;
+        z-index: 0;
+        @media (max-width: 1439px) {
+          display: none;
+        }
+      }
+    }
+
+
+    .design, .frontend, .backend {
+      z-index: 1;
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+
+      .designTitle, .frontTitle, .backTitle {
+        @include Text-FS-FW-LH(20px, 400, 23px);
+        padding: 0 24px 24px;
+        text-transform: uppercase;
+        @media (max-width: 965px) {
+          padding: 0 0 24px 0;
+        }
+      }
+
+      .designBlock, .frontBlock, .backBlock {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap-reverse;
+        min-height: 134px;
+        border: 0.5px solid $text-color-primary;
+        border-radius: 35px;
+        background: rgba(217, 217, 217, 0.1);
+        backdrop-filter: blur(34px);
+        padding: 20px;
+        column-gap: 35px;
+        row-gap: 32px;
+
+        .toolItem {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: center;
+
+          .toolIcon {
+            min-width: 52px;
+          }
+
+          .toolName {
+            @include Text-FS-FW-LH(16px, 400, 19px);
+            text-align: center;
+          }
+        }
+      }
+    }
+
+
+    .design {
+      width: 304px;
+      height: 204px;
+      @media (max-width: 965px) {
+        width: 215px;
+        height: 134px;
+      }
+
+      .designTitle {
+        text-align: left;
+      }
+    }
+
+    .frontend {
+      top: 405px;
+      right: 0;
+      width: 500px;
+      height: 325px;
+      @media (max-width: 1439px) {
+        top: 230px;
+      }
+      @media (max-width: 965px) {
+        width: 320px;
+        height: 420px;
+        top: 303px;
+        z-index: 0;
+      }
+
+      .frontTitle {
+        text-align: right;
+      }
+
+      .frontBlock {
+        flex-direction: row-reverse;
+        @media (max-width: 965px) {
+          flex-direction: column;
+          justify-content: space-between;
+        }
+      }
+
+    }
+
+    .backend {
+      top: 657px;
+      left: 0;
+      width: 300px;
+      height: 181px;
+      @media (max-width: 1439px) {
+        top: 530px;
+      }
+      @media (max-width: 965px) {
+        top: 760px;
+        z-index: 0;
+      }
+
+      .backTitle {
+        text-align: left;
+      }
+    }
+  }
+}
+
