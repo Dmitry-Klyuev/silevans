@@ -11,6 +11,7 @@ export type weDoDataType = {
         title: string;
         subTitle: string;
         desc: string;
+        avatar?: string;
         price: number;
         QA?:
             {

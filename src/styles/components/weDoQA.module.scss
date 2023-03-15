@@ -38,8 +38,10 @@
     .desc_active {
       display: block;
       transition: all ease-in-out 2s;
+      @include Text-FS-FW-LH(14px, 400, 150%);
       padding: 25px 47px;
       width: 620px;
+      white-space: pre-line;
     }
   }
 }
