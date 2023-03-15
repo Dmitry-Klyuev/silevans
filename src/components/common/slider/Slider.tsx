@@ -2,7 +2,6 @@ import React from 'react';
 import styles from '@/styles/components/slider/slider.module.scss'
 import {Swiper, SwiperSlide} from "swiper/react";
 import {Autoplay, Navigation} from "swiper";
-import ava from '@/assets/img/reviews_ava.png'
 import arrow from '@/assets/img/Arrow_2.png'
 
 import 'swiper/css/navigation';
@@ -17,6 +16,7 @@ export type SwiperDataType = {
         subTitle?: string;
         desc: string;
         price?: number;
+        avatar?: string;
         QA?:
             {
                 title?: string;
@@ -46,7 +46,7 @@ export const Slider: React.FC<SwiperDataType> = ({swiperData, activeHandler}) =>
                 {swiperData.map((el, index) => {
                     return <SwiperSlide key={index} className={styles.slide}>
                         <div className={styles.image}>
-                            <img src={ava.src} alt={el.title} style={{maxWidth: '100%', height: 'auto'}}/>
+                            <img src={el.avatar} alt={el.title} style={{maxWidth: '100%', height: 'auto'}}/>
                         </div>
                         <div className={styles.allText}>
                             <div className={styles.title}>
