@@ -24,7 +24,19 @@
     .logo {
       width: 180px;
     }
-    .date{
+
+    .btn {
+      @include Text-FS-FW-LH(20px, 700, 23px);
+      width: 255px;
+      background: #4C04A6;
+      border-radius: 22px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .date {
       display: none;
     }
   }
@@ -71,8 +83,12 @@
 
 @media (max-width: 1439px) {
   .wrapper {
-    .contacts{
+    .contacts {
+      .btn{
+        width: 220px;
+      }
     }
+
     .allServices {
       column-gap: 62px;
     }
@@ -83,28 +99,37 @@
   .wrapper {
     padding: 34px 20px;
 
-    .contacts{
+    .contacts {
       @include Text-FS-FW-LH(14px, 400, 28px);
-      .date{
+
+      .date {
         display: inline-block;
       }
+      .btn{
+        @include Text-FS-FW-LH(14px, 400, 16px);
+        width: 175px;
+      }
     }
-    .allServices{
+
+    .allServices {
 
 
       display: flex;
       flex-direction: column;
-      .services1{
-        a{
+
+      .services1 {
+        a {
           @include Text-FS-FW-LH(14px, 400, 28px);
         }
       }
-      .services2{
-        a{
+
+      .services2 {
+        a {
           @include Text-FS-FW-LH(14px, 400, 28px);
         }
       }
-      .date{
+
+      .date {
         display: none;
       }
     }
