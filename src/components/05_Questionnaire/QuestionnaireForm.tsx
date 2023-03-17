@@ -76,7 +76,7 @@ const QuestionnaireForm = () => {
         validationSchema: yup.object({
             name: yup.string().trim().required("Необходимо ввести имя"),
             phone: yup.string().required("Необходима ввести телефон").min(7, "Слишком короткий номер"),
-            email: yup.string().email('Некорректный email').required('Необходимо ввести email'),
+            //email: yup.string().email('Некорректный email').required('Необходимо ввести email'),
         })
     });
 
