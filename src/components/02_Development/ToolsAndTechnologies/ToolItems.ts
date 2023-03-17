@@ -36,53 +36,52 @@ export const toolItems = [
     },
     {
         id: 5,
-        title: 'Node.js',
-        img: node.src
-    },
-    {
-        id: 6,
         title: 'Sass',
         img: sass.src
     },
     {
-        id: 7,
+        id: 6,
         title: 'React',
         img: react.src
     },
     {
-        id: 8,
+        id: 7,
         title: 'JavaScript',
         img: js.src
     },
     {
-        id: 9,
+        id: 8,
         title: 'CSS 3',
         img: css.src
     },
     {
-        id: 10,
+        id: 9,
         title: 'HTML 5',
         img: html.src
     },
     {
-        id: 11,
+        id: 10,
         title: 'Vue.js',
         img: vue.src
     },
     {
-        id: 12,
+        id: 11,
         title: 'PHP',
         img: php.src
     },
     {
-        id: 13,
+        id: 12,
         title: 'Ruby',
         img: ruby.src
     },
     {
-        id: 14,
+        id: 13,
         title: 'Java',
         img: java.src
     },
-
+    {
+        id: 14,
+        title: 'Node.js',
+        img: node.src
+    },
 ]

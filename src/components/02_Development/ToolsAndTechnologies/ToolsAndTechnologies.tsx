@@ -44,7 +44,7 @@ const ToolsAndTechnologies = () => {
                     <div className={style.frontTitle}>FRONT-END</div>
                     <div className={style.frontBlock}>
 
-                        {toolItems.filter(i => i.id > 2 && i.id < 12).map((i) => {
+                        {toolItems.filter(i => i.id > 2 && i.id < 11).map((i) => {
                             return <FilteredTools key={i.id} title={i.title} img={i.img}/>
                         })}
 
@@ -54,7 +54,7 @@ const ToolsAndTechnologies = () => {
                     <div className={style.backTitle}>BACK-END</div>
                     <div className={style.backBlock}>
 
-                        {toolItems.filter(i => i.id > 11 && i.id < 15).map((i) => {
+                        {toolItems.filter(i => i.id > 10 && i.id < 15).map((i) => {
                             return <FilteredTools key={i.id} title={i.title} img={i.img}/>
                         })}
 
