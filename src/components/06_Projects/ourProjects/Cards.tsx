@@ -5,13 +5,13 @@ import {PortfolioType} from "@/components/06_Projects/ourProjects/moc";
 import {useWindowSize} from "@/hooks/useWindowSize";
 import LinkBtn from "@/components/common/buttons/LinkBtn";
 
-const Cards: React.FC<{ portfolio: PortfolioType[], setIdCallBack: (id: string) => void, id: string, setPageSize: (size: number) => void}> = ({
-                                                                                                                                                                     portfolio,
-                                                                                                                                                                     setIdCallBack,
-                                                                                                                                                                     id,
-                                                                                                                                                                     setPageSize,
-    
-                                                                                                                                                                 }) => {
+const Cards: React.FC<{ portfolio: PortfolioType[], setIdCallBack: (id: string) => void, id: string, setPageSize: (size: number) => void }> = ({
+                                                                                                                                                   portfolio,
+                                                                                                                                                   setIdCallBack,
+                                                                                                                                                   id,
+                                                                                                                                                   setPageSize,
+
+                                                                                                                                               }) => {
     const size = useWindowSize();
     const [showModal, setShowModal] = useState(false)
 

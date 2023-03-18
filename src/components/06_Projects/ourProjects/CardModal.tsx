@@ -32,7 +32,7 @@ const CardModal: React.FC<{ el: PortfolioType, closeModal: () => void }> = ({el,
                 <h6 className={style.itemTitle}>{el.design.title}</h6>
                 <p className={style.itemDescription}>{el.design.description}</p>
             </div>
-            <FullButton className={style.btn}><a href={el.link}>Перейти на Сайт</a></FullButton>
+            <FullButton className={style.btn}><a href={el.link} target="_blank">Перейти на Сайт</a></FullButton>
         </div>
     );
 };
