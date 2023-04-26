@@ -20,7 +20,7 @@ export type PortfolioType<T = { title: string, description: string }> = {
     frontEnd: T,
     backEnd: T,
     design: T,
-    link: string
+    link: string,
 }
 
 export const portfolioData: PortfolioType[] = [
