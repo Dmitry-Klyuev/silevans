@@ -8,6 +8,7 @@ const Comfortable = () => {
             <div className={style.blockComfort}>
                 <div className={style.rocketsImg}>
                     <h3 className={style.comfort_title}>С нами <br/> комфортно</h3>
+                    <div></div>
                 </div>
                 <div className={style.circleImg}>
                     <p className={style.comfort_description}>
