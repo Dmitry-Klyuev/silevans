@@ -5,7 +5,7 @@ import {PortfolioType} from "@/components/06_Projects/ourProjects/moc";
 import {useWindowSize} from "@/hooks/useWindowSize";
 import LinkBtn from "@/components/common/buttons/LinkBtn";
 
-const Cards: React.FC<{ portfolio: PortfolioType[], setIdCallBack: (id: string) => void, id: string, setPageSize: (size: number) => void}> = ({
+const Cards: React.FC<{ portfolio: PortfolioType[], setIdCallBack: (id: string) => void, id: string, setPageSize: (size: number) => void, pageSize:number}> = ({
                                                                                                                                                                      portfolio,
                                                                                                                                                                      setIdCallBack,
                                                                                                                                                                      id,
